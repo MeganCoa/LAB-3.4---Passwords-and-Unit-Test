@@ -23,10 +23,9 @@ public class passwordStorage {
 			
 				if (validPwd(pwd)) {
 					System.out.println("Password valid and accepted");
-					addPassword(pwd);
 				}
 				else {
-					System.out.println("Error try again");
+					System.out.println("Error");
 				}
 			}
 	}
@@ -37,22 +36,21 @@ public class passwordStorage {
 	
 	
 	public static boolean addPassword(String pass) {
-		Boolean goodpass = true;
 		for(int i = 0; i < password.size();i++) {
-			if ((password.get(i).equals(pass))) {
+			if (password.get(i).equals(pass)) {
 				System.out.println("Password already in list");
-				goodpass = true;
+				return false;
 			}
 			else if (pass.equals("mod") || pass.equals("admin") ) {
 				password.add(pass);
-				goodpass = true;
+				return true;
 			}
 			else {
 				password.add(pass);
-				goodpass = false;
+				return true;
 			}
 		}
-		return goodpass;
+		return false;
  }
  
  public static boolean validPwd(String pwd) {

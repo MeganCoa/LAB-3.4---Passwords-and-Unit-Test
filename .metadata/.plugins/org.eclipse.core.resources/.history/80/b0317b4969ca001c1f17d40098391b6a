@@ -39,7 +39,7 @@ public class passwordStorage {
 	public static boolean addPassword(String pass) {
 		Boolean goodpass = true;
 		for(int i = 0; i < password.size();i++) {
-			if ((password.get(i).equals(pass))) {
+			if ((password.get(i).equals(pass)) {
 				System.out.println("Password already in list");
 				goodpass = true;
 			}
