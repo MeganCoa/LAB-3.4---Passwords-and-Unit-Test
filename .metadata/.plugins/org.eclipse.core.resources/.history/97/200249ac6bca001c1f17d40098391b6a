@@ -41,17 +41,19 @@ public class passwordStorage {
 		for(int i = 0; i < password.size();i++) {
 			if ((password.get(i).equals(pass))) {
 				System.out.println("Password already in list");
+				goodpass = true;
 			}
 			else if (pass.equals("mod") || pass.equals("admin") ) {
 				password.add(pass);
-							
+				goodpass = true;
+				
 			}
 			else if (validPwd(pass)) {
 				password.add(pass);
-				
+				goodpass = false;
 			}
 		}
-		return (validPwd(pass) || (pass.equals("mod") || pass.equals("admin")));
+		return goodpass;
  }
  
  public static boolean validPwd(String pwd) {
