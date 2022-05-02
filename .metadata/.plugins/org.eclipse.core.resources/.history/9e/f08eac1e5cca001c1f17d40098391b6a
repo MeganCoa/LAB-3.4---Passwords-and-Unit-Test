@@ -14,15 +14,13 @@ public class passwordStorage {
 		"The phrase admin and mod may be used as passwords and ignores all other rules but" +
 		"cannot be a duplicate\n");
 		
-		while(true) {
-			String pwd = scrn.nextLine(); //Read user input
-			
-			if (validPwd(pwd)) {
-				System.out.println("Password valid and accepted");
-			}
-			else {
-				System.out.println("Error");
-			}
+		String pwd = scrn.nextLine(); //Read user input
+		
+		if (validPwd(pwd)) {
+			System.out.println("Password valid and accepted");
+		}
+		else {
+			System.out.println("Error");
 		}
 	}
 	
@@ -38,7 +36,7 @@ public class passwordStorage {
  
  public static boolean validPwd(String pwd) {
 	 	
-	 	Pattern p = Pattern.compile("(?=.*[a-zA-Z])(?!.*6)(?!.*\s)(?=.*[A,E,I,O,U,Y]{2,}).+$");
+	 	Pattern p = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{7,12}(?=.*[!]).+$");
 		Matcher m = p.matcher(pwd);
 		boolean b = m.matches();
 		

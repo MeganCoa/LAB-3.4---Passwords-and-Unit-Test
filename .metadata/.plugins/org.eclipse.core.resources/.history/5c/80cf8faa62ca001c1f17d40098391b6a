@@ -38,7 +38,7 @@ public class passwordStorage {
  
  public static boolean validPwd(String pwd) {
 	 	
-	 	Pattern p = Pattern.compile("(?=.*[a-zA-Z])(?!.*6)(?!.*\s)(?=.*[A,E,I,O,U,Y]{2,}).+$");
+	 	Pattern p = Pattern.compile("(?=.*[a-zA-Z])(?!.*6)(?!.*\s).+$");
 		Matcher m = p.matcher(pwd);
 		boolean b = m.matches();
 		
