@@ -1,16 +1,12 @@
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-import java.util.ArrayList;
 
 
 public class passwordStorage {
-	static ArrayList<String> password = new ArrayList<String>();
-	
+
 	public static void main(String[] args) {
-		
 		Scanner scrn = new Scanner(System.in); //Create a Scanner Object for password
-		
 		System.out.println("Only New passwords\nBetween 7-12 characters\n" +
 		"At least one (1) number but cannot use the number 6\n" + 
 		"No spaces permited\n" +
@@ -21,13 +17,13 @@ public class passwordStorage {
 		while(true) {
 			String pwd = scrn.nextLine(); //Read user input
 			
-				if (validPwd(pwd)) {
-					System.out.println("Password valid and accepted");
-				}
-				else {
-					System.out.println("Error");
-				}
+			if (validPwd(pwd)) {
+				System.out.println("Password valid and accepted");
 			}
+			else {
+				System.out.println("Error");
+			}
+		}
 	}
 	
 	
@@ -35,23 +31,10 @@ public class passwordStorage {
 	
 	
 	
-	public static boolean addPassword(String pass) {
-		for(int i = 0; i < password.size();i++) {
-			if (password.get(i).equals(pass)) {
-				System.out.println("Password already in list");
-				return false;
-			}
-			else if (pass.equals("mod") || pass.equals("admin") ) {
-				password.add(pass);
-				return true;
-			}
-			else {
-				password.add(pass);
-				return true;
-			}
-		}
-		return false;
- }
+//	public static boolean addPassword(String password) {
+// 
+//	 return true;
+// }
  
  public static boolean validPwd(String pwd) {
 	 	
