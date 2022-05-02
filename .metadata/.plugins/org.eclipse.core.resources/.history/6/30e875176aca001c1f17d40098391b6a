@@ -21,9 +21,9 @@ public class passwordStorage {
 		while(true) {
 			String pwd = scrn.nextLine(); //Read user input
 			
-				if (addPassword(pwd)) {
+				if (validPwd(pwd)) {
 					System.out.println("Password valid and accepted");
-					
+					addPassword(pwd);
 				}
 				else {
 					System.out.println("Error try again");
@@ -46,7 +46,6 @@ public class passwordStorage {
 			else if (pass.equals("mod") || pass.equals("admin") ) {
 				password.add(pass);
 				goodpass = true;
-				
 			}
 			else {
 				password.add(pass);
