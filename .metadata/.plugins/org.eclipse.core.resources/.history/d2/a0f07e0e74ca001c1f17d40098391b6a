@@ -23,7 +23,7 @@ public class passwordStorage {
 			
 				if (addPassword(pwd)) {
 					System.out.println("Password valid and accepted");
-				
+					password.add(pwd);
 				}
 				else {
 					System.out.println("Error try again");
@@ -37,10 +37,8 @@ public class passwordStorage {
 		for(int i = 0; i < password.size();i++) {
 			if ((password.get(i).equals(pass))) {
 				System.out.println("Password already in list");
-				return false;
 			}
-		}
-			if (pass.equals("mod") || pass.equals("admin") ) {
+			else if (pass.equals("mod") || pass.equals("admin") ) {
 				password.add(pass);
 					
 			}
@@ -48,7 +46,7 @@ public class passwordStorage {
 				password.add(pass);
 				
 			}
-		
+		}
 		return (validPwd(pass) || (pass.equals("mod")) || (pass.equals("admin")));
  }
  
